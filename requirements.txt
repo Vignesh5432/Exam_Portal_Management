@@ -5,7 +5,6 @@ django-cors-headers==4.9.0
 
 # Database
 psycopg2-binary==2.9.10
-mysqlclient==2.2.7
 dj-database-url==2.2.0
 
 # WSGI Server
