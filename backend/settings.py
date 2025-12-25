@@ -81,10 +81,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Use PostgreSQL on Render (via DATABASE_URL), MySQL locally
-if 'DATABASE_URL' in os.environ:
+database_url = os.environ.get('DATABASE_URL', '')
+if database_url:
     DATABASES = {
         'default': dj_database_url.config(
-            default=os.environ.get('DATABASE_URL'),
+            default=database_url,
             conn_max_age=600,
             conn_health_checks=True,
         )
